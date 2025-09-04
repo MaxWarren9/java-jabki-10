@@ -9,7 +9,7 @@ public class ItemStore {
     private final Map<String, Item> items = new HashMap<>();
 
     public Item getItem(String code) throws ItemNotFoundException {
-        if (!this.items.containsKey(code)) throw new ItemNotFoundException("Товара с данным кодом нет в списке");
+        if (!this.items.containsKey(code)) throw new ItemNotFoundException();
         return this.items.get(code);
     }
 

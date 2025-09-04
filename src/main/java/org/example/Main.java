@@ -17,14 +17,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.example.deposit.Transfer.transfer;
 
 public class Main {
     public static void main(String[] args) {
         // 1.
-        safeDivide(10, 3);
-        safeDivide(10, 0);
+        System.out.println(safeDivide(10, 0));
         // 2.
         try {
             isEmptyString(" a");
@@ -133,12 +131,15 @@ public class Main {
     }
 
     // 1. Метод безопасного деления, который возвращает a / b. Если b == 0, перехватите исключение и выведите сообщение: "Деление на ноль запрещено".
-    public static void safeDivide(int a, int b) {
+    public static double safeDivide(int a, int b) {
         try {
-            int i = a / b;
-            System.out.println(i);
+            if (b == 0) {
+                throw new ArithmeticException("Деление на ноль запрещено");
+            }
+            return (double) a / b;
         } catch (ArithmeticException e) {
-            System.out.println("Деление на ноль запрещено");
+            System.out.println(e.getMessage());
+            return Double.NaN;
         }
     }
 

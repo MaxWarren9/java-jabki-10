@@ -23,7 +23,7 @@ public class Item {
             int ratingValue = Integer.parseInt(rating);
 
             if (ratingValue < 1 || ratingValue > 5) {
-                throw new InvalidRatingException("Рейтинг должен быть в диапазоне от 1 до 5");
+                throw new InvalidRatingException();
             }
             items.add(ratingValue);
             System.out.printf("Рейтинг %d добавлен для товара %s.", ratingValue, itemName);

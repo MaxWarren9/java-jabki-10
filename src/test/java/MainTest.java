@@ -38,11 +38,10 @@ public class MainTest {
 
     @Test
     public void safeDivideTest() {
-        Main.safeDivide(10, 2);
-        assertEquals("5\n", out.toString());
+        assertEquals(5, Main.safeDivide(10, 2));
 
         Main.safeDivide(10, 0);
-        assertEquals("5\nДеление на ноль запрещено\n", out.toString());
+        assertEquals("Деление на ноль запрещено\n", out.toString());
     }
 
     @Test

@@ -4,9 +4,9 @@ import org.example.customException.NegativeDepositException;
 
 public class Account {
     private String id;
-    private Integer balance;
+    private double balance;
 
-    public Account(String id, int balance) {
+    public Account(String id, double balance) {
         this.id = id;
         this.balance = balance;
     }
@@ -15,22 +15,22 @@ public class Account {
         return this.id;
     }
 
-    public int getBalance() {
-        return balance;
+    public double getBalance() {
+        return this.balance;
     }
 
-    public void setBalance(Integer balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
     @Override
     public String toString() {
-        return "id: "+ id + "\nbalance: " + balance.toString();
+        return "id: "+ id + "\nbalance: " + balance;
     }
 
-    public void deposit(int amount) throws NegativeDepositException {
+    public void deposit(double amount) throws NegativeDepositException {
         if (amount < 0) {
-            throw new NegativeDepositException("Введено отрицательное число");
+            throw new NegativeDepositException();
         }
         balance += amount;
     }
