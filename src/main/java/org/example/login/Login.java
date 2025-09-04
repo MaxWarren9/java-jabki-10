@@ -11,15 +11,15 @@ public class Login {
     private final Map<String, String> users = new HashMap<>();
 
     public void registerUser(String username, String password) {
-        users.put(username, password);
+        this.users.put(username, password);
     }
     public void login(String username, String password) throws LoginFailedException {
 
-        if (!users.containsKey(username)) {
+        if (!this.users.containsKey(username)) {
             throw new LoginFailedException("Данного пользователя не существует");
         }
 
-        if (!password.equals(users.get(username))) {
+        if (!password.equals(this.users.get(username))) {
             throw new LoginFailedException("Пароль для пользователя введен неверно");
         }
 
@@ -29,6 +29,6 @@ public class Login {
     }
 
     public Map<String, String> getUsers() {
-        return users;
+        return this.users;
     }
 }

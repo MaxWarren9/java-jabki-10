@@ -33,6 +33,6 @@ public class Item {
     }
 
     public List<Integer> getItems() {
-        return items;
+        return this.items;
     }
 }

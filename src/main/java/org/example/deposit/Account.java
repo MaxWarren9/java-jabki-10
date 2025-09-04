@@ -2,9 +2,6 @@ package org.example.deposit;
 
 import org.example.customException.NegativeDepositException;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Account {
     private String id;
     private Integer balance;
@@ -15,7 +12,7 @@ public class Account {
     }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public int getBalance() {
@@ -28,7 +25,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "id: "+ id.toString() + "\nbalance: " + balance.toString();
+        return "id: "+ id + "\nbalance: " + balance.toString();
     }
 
     public void deposit(int amount) throws NegativeDepositException {
